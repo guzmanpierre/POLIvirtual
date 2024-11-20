@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <!-- Configuración de la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>POLIvirtual IPN - Dashboard</title>
+    <!-- Conexión con archivo de estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header class="header">
+        <!-- Contenedor del logo -->
+        <div class="logo-container">
+            <img src="https://live.staticflickr.com/65535/54072830687_5fa1720fe1_o.png" alt="IPN Logo" class="logo">
+            <h1>POLIvirtual</h1>
+        </div>
+        
+        <!-- Menú de navegación -->
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active">Dashboard</a>
+            <a href="#" class="nav-item">Mis Cursos</a>
+            <a href="#" class="nav-item">Calendario</a>
+            <a href="#" class="nav-item">Mensajes</a>
+        </nav>
+
+        <!-- Menú de usuario -->
+        <div class="user-menu">
+            <div class="notifications">
+                <span class="notification-icon">🔔</span>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="user-avatar">👤</div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Sección de estadísticas rápidas -->
+        <section class="quick-stats">
+            <!-- Tarjeta de estadística 1 -->
+            <div class="stat-card">
+                <h3>Cursos Activos</h3>
+                <div class="stat-number">6</div>
+            </div>
+            <!-- Tarjeta de estadística 2 -->
+            <div class="stat-card">
+                <h3>Tareas Pendientes</h3>
+                <div class="stat-number">4</div>
+            </div>
+            <!-- Tarjeta de estadística 3 -->
+            <div class="stat-card">
+                <h3>Promedio General</h3>
+                <div class="stat-number">8.5</div>
+            </div>
+        </section>
+
+        <!-- Sección de cursos -->
+        <h2>Mis Cursos</h2>
+        <div class="dashboard-grid">
+            <!-- Curso 1 - Tarjeta con efecto flip -->
+            <div class="course-card-container">
+                <div class="course-card-inner">
+                    <!-- Parte frontal de la tarjeta -->
+                    <div class="course-card-front">
+                        <div class="course-header">
+                            <div class="course-icon">📚</div>
+                            <div>
+                                <h3>Cálculo Diferencial</h3>
+                                <p>Prof. Martínez</p>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <p>Próxima clase: Lunes 9:00 AM</p>
+                    </div>
+                    <!-- Parte trasera de la tarjeta -->
+                    <div class="course-card-back">
+                        <h4>Detalles del Curso</h4>
+                        <ul>
+                            <li>Progreso: 75%</li>
+                            <li>Calificación Actual: 8.5</li>
+                            <li>Tareas Pendientes: 2</li>
+                            <li>Siguiente Evaluación: 15/Nov</li>
+                        </ul>
+                        <button class="enter-course">Entrar al Curso</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 2 -->
+            <div class="course-card-container">
+                <div class="course-card-inner">
+                    <div class="course-card-front">
+                        <div class="course-header">
+                            <div class="course-icon">🧪</div>
+                            <div>
+                                <h3>Física Básica</h3>
+                                <p>Prof. García</p>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <p>Próxima entrega: Jueves</p>
+                    </div>
+                    <div class="course-card-back">
+                        <h4>Detalles del Curso</h4>
+                        <ul>
+                            <li>Progreso: 60%</li>
+                            <li>Calificación Actual: 8.0</li>
+                            <li>Tareas Pendientes: 1</li>
+                            <li>Siguiente Práctica: 18/Nov</li>
+                        </ul>
+                        <button class="enter-course">Entrar al Curso</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 3 -->
+            <div class="course-card-container">
+                <div class="course-card-inner">
+                    <div class="course-card-front">
+                        <div class="course-header">
+                            <div class="course-icon">💻</div>
+                            <div>
+                                <h3>Programación</h3>
+                                <p>Prof. Rodríguez</p>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <p>Laboratorio: Miércoles 2:00 PM</p>
+                    </div>
+                    <div class="course-card-back">
+                        <h4>Detalles del Curso</h4>
+                        <ul>
+                            <li>Progreso: 85%</li>
+                            <li>Calificación Actual: 9.0</li>
+                            <li>Tareas Pendientes: 1</li>
+                            <li>Siguiente Proyecto: 20/Nov</li>
+                        </ul>
+                        <button class="enter-course">Entrar al Curso</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Conexión con archivo de JavaScript -->
+    <script src="dashboard-script.js"></script>
+</body>
+</html>

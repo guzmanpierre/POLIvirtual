@@ -1,0 +1,309 @@
+/* Variables globales para colores y valores comunes */
+:root {
+    --primary: #831010;         /* Color principal (rojo IPN) */
+    --secondary: #a01c1c;       /* Color secundario */
+    --background: #f5f5f5;      /* Color de fondo general */
+    --text: #333;              /* Color de texto principal */
+    --card-bg: white;          /* Color de fondo de tarjetas */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra estándar */
+}
+
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Estilos del cuerpo de la página */
+body {
+    background: var(--background);
+    min-height: 100vh;
+}
+
+/* Estilos del encabezado */
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Estilos del logo */
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Menú de navegación */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Enlaces del menú */
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en enlaces */
+.nav-item:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* Enlace activo */
+.nav-item.active {
+    background: rgba(255,255,255,0.2);
+    font-weight: bold;
+}
+
+/* Menú de usuario */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Contenedor de notificaciones */
+.notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Badge de notificaciones */
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Avatar de usuario */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Contenido principal */
+.main-content {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Grid de tarjetas del dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Contenedor de tarjeta con efecto flip */
+.course-card-container {
+    perspective: 1000px;
+    height: 250px;
+}
+
+/* Interior de la tarjeta giratoria */
+.course-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Efecto de giro al hover */
+.course-card-container:hover .course-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos comunes para frente y reverso */
+.course-card-front, .course-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* Reverso de la tarjeta */
+.course-card-back {
+    transform: rotateY(180deg);
+    background: var(--primary);
+    color: white;
+}
+
+/* Encabezado de la tarjeta */
+.course-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Icono del curso */
+.course-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+/* Relleno de la barra de progreso */
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    width: 0;
+    transition: width 1s ease;
+}
+
+/* Estadísticas rápidas */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Tarjetas de estadísticas */
+.stat-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Números en las estadísticas */
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 0.5rem 0;
+}
+
+/* Botón de entrada al curso */
+.enter-course {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enter-course:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Lista en el reverso de la tarjeta */
+.course-card-back ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.course-card-back li {
+    margin: 0.5rem 0;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación de entrada */
+.course-card-container {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    /* Ocultar menú en móviles */
+    .nav-menu {
+        display: none;
+    }
+    
+    /* Ajustar grid en móviles */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustar estadísticas en móviles */
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustar padding en móviles */
+    .main-content {
+        padding: 0 1rem;
+    }
+}
