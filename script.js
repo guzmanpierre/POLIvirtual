@@ -20,7 +20,6 @@ const videoID = "qmKLxuy1Hy8";
 const playerContainer = {
     player: null,
 
-    // Carga la API de YouTube
     loadYouTubeAPI: function() {
         const tag = document.createElement("script");
         tag.src = "https://www.youtube.com/iframe_api";
@@ -28,7 +27,6 @@ const playerContainer = {
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     },
 
-    // Inicializa el reproductor cuando la API está lista
     onYouTubeIframeAPIReady: function() {
         playerContainer.player = new YT.Player("yt-player", {
             videoId: videoID,
@@ -40,14 +38,12 @@ const playerContainer = {
         });
     },
 
-    // Reproducir el video y configurar el redimensionamiento cuando el reproductor está listo
     onPlayerReady: function(event) {
         event.target.playVideo();
         playerContainer.resizeVideo();
         window.addEventListener("resize", playerContainer.resizeVideo);
     },
 
-    // Redimensionar el video según el tamaño de la ventana
     resizeVideo: function() {
         const videoRatio = 16 / 9;
         const windowRatio = window.innerWidth / window.innerHeight;
@@ -62,7 +58,6 @@ const playerContainer = {
         }
     },
 
-    // Volver al inicio del video cuando termina, sin parpadeo
     onPlayerStateChange: function(event) {
         if (event.data === YT.PlayerState.ENDED) {
             playerContainer.player.seekTo(0);
@@ -72,8 +67,6 @@ const playerContainer = {
 
 // Cargar la API de YouTube
 playerContainer.loadYouTubeAPI();
-
-// Asignar la función de inicialización al objeto global
 window.onYouTubeIframeAPIReady = playerContainer.onYouTubeIframeAPIReady;
 
 // Animación de los números de estadísticas
