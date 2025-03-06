@@ -94,5 +94,4 @@ statNumbers.forEach(number => {
         }
     };
 
-    updateNumber();
-});
+  
